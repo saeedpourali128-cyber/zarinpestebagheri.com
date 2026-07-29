@@ -8,6 +8,10 @@
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
 	},
+	"routes": [
+		{ "pattern": "zarinpestebagheri.com", "custom_domain": true },
+		{ "pattern": "www.zarinpestebagheri.com", "custom_domain": true }
+	],
 	"services": [
 		{
 			// Self-reference service binding, the service name must match "name" above
