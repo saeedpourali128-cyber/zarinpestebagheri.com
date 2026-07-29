@@ -10,6 +10,13 @@ const nextConfig = {
     // سرویس Cloudflare Images دارد؛ چون همه‌ی تصاویر همین پروژه از قبل WebP هستند،
     // این بهینه‌سازی سمت سرور غیرفعال می‌شود تا نیاز به آن سرویس نباشد.
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
 };
 

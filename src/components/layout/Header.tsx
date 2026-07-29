@@ -6,11 +6,14 @@ import { NavLink } from "@/components/layout/NavLink";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
 import { DownloadCatalogButton } from "@/components/cta/DownloadCatalogButton";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
 
 export async function Header() {
   const t = await getTranslations("nav");
   const tCommon = await getTranslations("common");
   const tLang = await getTranslations("languageSwitcher");
+  const settings = await getSiteSettings();
+  const whatsappHref = buildWhatsappLink(settings);
 
   const navItems = [
     { href: "/", label: t("home") },
@@ -39,11 +42,14 @@ export async function Header() {
 
           <div className="hidden items-center gap-2.5 lg:flex">
             <DownloadCatalogButton
+              href={settings.catalogUrl}
               label={tCommon("downloadCatalog")}
+              pendingLabel={tCommon("pending")}
               variant="secondary"
               className="border-gold-500/55 px-4 py-2 text-xs text-gold-500 hover:bg-gold-500 hover:text-forest-950"
             />
             <PriceInquiryButton
+              href={whatsappHref}
               label={t("priceInquiry")}
               pendingNotice={tCommon("pending")}
               variant="primary"
@@ -59,8 +65,20 @@ export async function Header() {
               closeLabel={t("closeMenu")}
               ctaSlot={
                 <div className="flex flex-col gap-2.5">
-                  <DownloadCatalogButton label={tCommon("downloadCatalog")} variant="secondary" className="w-full" />
-                  <PriceInquiryButton label={t("priceInquiry")} pendingNotice={tCommon("pending")} variant="primary" className="w-full" />
+                  <DownloadCatalogButton
+                    href={settings.catalogUrl}
+                    label={tCommon("downloadCatalog")}
+                    pendingLabel={tCommon("pending")}
+                    variant="secondary"
+                    className="w-full"
+                  />
+                  <PriceInquiryButton
+                    href={whatsappHref}
+                    label={t("priceInquiry")}
+                    pendingNotice={tCommon("pending")}
+                    variant="primary"
+                    className="w-full"
+                  />
                 </div>
               }
             />

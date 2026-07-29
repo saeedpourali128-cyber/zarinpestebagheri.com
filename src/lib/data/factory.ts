@@ -1,10 +1,18 @@
+import { createClient } from "@/lib/supabase/server";
 import type { FactoryImage } from "@/lib/types/factory";
 
-export const factoryImages: FactoryImage[] = [
-  { slug: "factory-1", caption: "نمای بیرونی کارخانه", image: "/images/redesign/factory-gallery-1.webp" },
-  { slug: "factory-2", caption: "خط فرآوری و بو دادن", image: "/images/redesign/factory-gallery-2.webp" },
-  { slug: "factory-3", caption: "خط سورتینگ و درجه‌بندی", image: "/images/redesign/factory-gallery-3.webp" },
-  { slug: "factory-4", caption: "خط بسته‌بندی اتوماتیک", image: "/images/redesign/factory-gallery-4.webp" },
-  { slug: "factory-5", caption: "انبار محصول نهایی", image: "/images/redesign/factory-gallery-5.webp" },
-  { slug: "factory-6", caption: "تیم کنترل کیفیت", image: "/images/redesign/factory-gallery-6.webp" },
-];
+const SELECT_COLUMNS = "slug, caption, image";
+
+function mapFactoryImage(row: { slug: string; caption: string; image: string | null }): FactoryImage {
+  return { slug: row.slug, caption: row.caption, image: row.image };
+}
+
+export async function getFactoryImages(): Promise<FactoryImage[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("factory_images")
+    .select(SELECT_COLUMNS)
+    .order("sort_order", { ascending: true });
+  if (error) throw new Error(`خطا در دریافت تصاویر کارخانه: ${error.message}`);
+  return (data ?? []).map(mapFactoryImage);
+}

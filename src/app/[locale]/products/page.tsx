@@ -3,8 +3,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { ProductCard } from "@/components/product/ProductCard";
-import { products } from "@/lib/data/products";
+import { getAllProducts } from "@/lib/data/products";
 import type { ProductCategory } from "@/lib/types/product";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -32,6 +34,7 @@ export default async function ProductsPage({
 
   const t = await getTranslations("products");
   const tCommon = await getTranslations("common");
+  const products = await getAllProducts();
 
   return (
     <Container className="py-10 sm:py-14">

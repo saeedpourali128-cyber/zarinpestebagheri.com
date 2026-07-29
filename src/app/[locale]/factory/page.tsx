@@ -5,9 +5,12 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DownloadCatalogButton } from "@/components/cta/DownloadCatalogButton";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
-import { factoryImages } from "@/lib/data/factory";
-import { machinery } from "@/lib/data/machinery";
-import { certificates } from "@/lib/data/certificates";
+import { getFactoryImages } from "@/lib/data/factory";
+import { getMachinery } from "@/lib/data/machinery";
+import { getAllCertificates } from "@/lib/data/certificates";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("factoryPage");
@@ -26,6 +29,13 @@ export default async function FactoryPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations("factoryPage");
   const tCommon = await getTranslations("common");
+  const [factoryImages, machinery, certificates, settings] = await Promise.all([
+    getFactoryImages(),
+    getMachinery(),
+    getAllCertificates(),
+    getSiteSettings(),
+  ]);
+  const whatsappHref = buildWhatsappLink(settings);
 
   return (
     <>
@@ -69,7 +79,7 @@ export default async function FactoryPage({ params }: { params: Promise<{ locale
               <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-3">
                 {certificates.map((certificate) => <div key={certificate.slug} className="rounded-2xl border border-line-200 bg-white p-3 text-center shadow-sm"><div className="relative mx-auto h-12 w-20">{certificate.image ? <Image src={certificate.image} alt={certificate.title} fill sizes="80px" className="object-contain" /> : null}</div><b className="mt-2 block text-[10px] leading-5 text-forest-900">{certificate.title}</b><span className="mt-1 block text-[9px] leading-4 text-ink-500">{certificate.description}</span></div>)}
               </div>
-              <div className="mt-5"><DownloadCatalogButton label="دانلود مستندات" variant="primary" className="w-full" /></div>
+              <div className="mt-5"><DownloadCatalogButton href={settings.catalogUrl} label="دانلود مستندات" pendingLabel="مستندات در حال تکمیل است" variant="primary" className="w-full" /></div>
             </aside>
           </div>
         </div>
@@ -81,7 +91,7 @@ export default async function FactoryPage({ params }: { params: Promise<{ locale
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {[['۳۰+','تجربه و اعتبار','بیش از ۳۰ سال'],['♙','پشتیبانی تخصصی','و مشاوره'],['▣','بسته‌بندی استاندارد','و صادراتی'],['↗','تحویل به‌موقع','برای بازارهای هدف'],['✓','کیفیت پایدار','و یکنواخت']].map(([icon,title,body]) => <div key={title} className="rounded-2xl border border-line-200 bg-white p-5 text-center shadow-sm"><span className="text-xl font-black text-gold-700">{icon}</span><b className="mt-2 block text-sm text-forest-900">{title}</b><p className="mt-1 text-xs text-ink-500">{body}</p></div>)}
           </div>
-          <div className="mt-7 flex flex-col items-center justify-between gap-5 rounded-3xl bg-forest-900 p-7 text-center text-cream-50 sm:flex-row sm:text-right"><div><b className="text-lg">برای بازدید، همکاری یا استعلام سفارش با واحد فروش در تماس باشید</b><p className="mt-1 text-xs text-cream-100/65">پاسخ‌گویی به سفارش‌های عمده داخلی و صادراتی</p></div><PriceInquiryButton label="استعلام قیمت" pendingNotice="شماره تماس در حال تکمیل است" variant="primary" className="shrink-0" /></div>
+          <div className="mt-7 flex flex-col items-center justify-between gap-5 rounded-3xl bg-forest-900 p-7 text-center text-cream-50 sm:flex-row sm:text-right"><div><b className="text-lg">برای بازدید، همکاری یا استعلام سفارش با واحد فروش در تماس باشید</b><p className="mt-1 text-xs text-cream-100/65">پاسخ‌گویی به سفارش‌های عمده داخلی و صادراتی</p></div><PriceInquiryButton href={whatsappHref} label="استعلام قیمت" pendingNotice="شماره تماس در حال تکمیل است" variant="primary" className="shrink-0" /></div>
         </div>
       </section>
     </>

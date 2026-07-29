@@ -7,13 +7,11 @@ import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { ProductCard } from "@/components/product/ProductCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { articleJsonLd } from "@/lib/seo/jsonld";
-import { articles, getArticleBySlug } from "@/lib/data/articles";
+import { getArticleBySlug } from "@/lib/data/articles";
 import { getProductBySlug } from "@/lib/data/products";
 import { siteConfig } from "@/lib/config/site";
 
-export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -21,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) return {};
 
   return {
@@ -45,16 +43,19 @@ export default async function ArticleDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
   const t = await getTranslations("knowledgeBasePage");
   const tProducts = await getTranslations("products");
   const tCommon = await getTranslations("common");
 
-  const relatedProducts = article.relatedProductSlugs
-    .map((productSlug) => getProductBySlug(productSlug))
-    .filter((product): product is NonNullable<typeof product> => Boolean(product));
+  const relatedProductResults = await Promise.all(
+    article.relatedProductSlugs.map((productSlug) => getProductBySlug(productSlug))
+  );
+  const relatedProducts = relatedProductResults.filter(
+    (product): product is NonNullable<typeof product> => Boolean(product)
+  );
 
   return (
     <Container className="py-10 sm:py-14">

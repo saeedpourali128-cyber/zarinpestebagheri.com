@@ -3,7 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { machinery } from "@/lib/data/machinery";
+import { getMachinery } from "@/lib/data/machinery";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("machineryPage");
@@ -24,6 +26,7 @@ export default async function MachineryPage({
 
   const t = await getTranslations("machineryPage");
   const tCommon = await getTranslations("common");
+  const machinery = await getMachinery();
 
   return (
     <Container className="py-10 sm:py-14">

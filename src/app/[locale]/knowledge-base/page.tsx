@@ -4,7 +4,9 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Link } from "@/lib/i18n/navigation";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { articles } from "@/lib/data/articles";
+import { getAllArticles } from "@/lib/data/articles";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("knowledgeBasePage");
@@ -25,6 +27,7 @@ export default async function KnowledgeBasePage({
 
   const t = await getTranslations("knowledgeBasePage");
   const tCommon = await getTranslations("common");
+  const articles = await getAllArticles();
 
   return (
     <Container className="py-10 sm:py-14">

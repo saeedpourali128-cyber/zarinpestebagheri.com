@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { getWhatsappLink } from "@/lib/config/whatsapp";
 
 type Variant = "primary" | "secondary";
 
@@ -26,25 +25,25 @@ function ChatIcon() {
 }
 
 export function PriceInquiryButton({
+  href,
   label,
   pendingNotice,
-  productName,
   variant = "primary",
   className = "",
 }: {
+  /** لینک نهایی wa.me که سرور با buildWhatsappLink ساخته؛ اگر واتساپ تنظیم نشده باشد null است. */
+  href: string | null;
   label: string;
   pendingNotice: string;
-  productName?: string;
   variant?: Variant;
   className?: string;
 }) {
   const [showNotice, setShowNotice] = useState(false);
-  const link = getWhatsappLink(productName);
 
-  if (link) {
+  if (href) {
     return (
       <a
-        href={link}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
         className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors duration-150 ${variantClasses[variant]} ${className}`}

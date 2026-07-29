@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
-import { siteConfig, contactInfo } from "@/lib/config/site";
-import { products } from "@/lib/data/products";
+import { siteConfig } from "@/lib/config/site";
+import { getAllProducts } from "@/lib/data/products";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
 
 export async function Footer() {
@@ -10,6 +11,7 @@ export async function Footer() {
   const tNav = await getTranslations("nav");
   const tCommon = await getTranslations("common");
   const year = new Date().getFullYear();
+  const [products, settings] = await Promise.all([getAllProducts(), getSiteSettings()]);
 
   return (
     <footer className="relative overflow-hidden border-t border-gold-500/20 bg-forest-950 text-cream-100">
@@ -45,12 +47,18 @@ export async function Footer() {
           <p className="mt-2 text-xs text-cream-100/55">{siteConfig.legalName}</p>
           <p className="mt-5 max-w-md text-sm leading-7 text-cream-100/72">{t("about")}</p>
           <div className="mt-5 space-y-2 text-sm text-cream-100/76">
-            <p>نشانی: {contactInfo.address}</p>
-            <p>تلفن: {contactInfo.phone ?? contactInfo.pendingLabel}</p>
-            <p>ایمیل: {contactInfo.email ?? contactInfo.pendingLabel}</p>
+            <p>نشانی: {settings.address ?? tCommon("pending")}</p>
+            <p>تلفن: {settings.phone ?? tCommon("pending")}</p>
+            <p>ایمیل: {settings.email ?? tCommon("pending")}</p>
           </div>
           <div className="mt-6">
-            <PriceInquiryButton label={tCommon("priceInquiry")} pendingNotice={tCommon("pending")} variant="primary" className="inline-flex" />
+            <PriceInquiryButton
+              href={buildWhatsappLink(settings)}
+              label={tCommon("priceInquiry")}
+              pendingNotice={tCommon("pending")}
+              variant="primary"
+              className="inline-flex"
+            />
           </div>
         </div>
       </div>

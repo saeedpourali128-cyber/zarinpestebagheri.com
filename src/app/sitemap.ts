@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config/site";
 import { routing } from "@/lib/i18n/routing";
-import { products } from "@/lib/data/products";
-import { articles } from "@/lib/data/articles";
+import { getAllProducts } from "@/lib/data/products";
+import { getAllArticles } from "@/lib/data/articles";
 
 const staticPaths = [
   "",
@@ -15,9 +15,10 @@ const staticPaths = [
   "/contact",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const locale = routing.defaultLocale;
   const entries: MetadataRoute.Sitemap = [];
+  const [products, articles] = await Promise.all([getAllProducts(), getAllArticles()]);
 
   for (const path of staticPaths) {
     entries.push({

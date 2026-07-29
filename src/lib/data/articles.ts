@@ -1,79 +1,53 @@
+import { createClient } from "@/lib/supabase/server";
 import type { Article } from "@/lib/types/article";
 
-export const articles: Article[] = [
-  {
-    slug: "arqam-peste-iran",
-    title: "آشنایی با ارقام اصلی پسته ایران",
-    shortDescription:
-      "معرفی کوتاه رقم‌های اکبری، احمدآقایی، فندقی و کله‌قوچی و تفاوت ظاهری آن‌ها.",
-    content: [
-      "پسته ایران در رقم‌های مختلفی کشت می‌شود که هر یک ویژگی‌های ظاهری و کاربردی خاص خود را دارند. شناخت این رقم‌ها برای خریداران عمده و صادراتی در انتخاب محصول مناسب اهمیت دارد.",
-      "پسته اکبری با پوسته کشیده و بلند شناخته می‌شود و از نظر ظاهری یکی از ممتازترین رقم‌ها به شمار می‌رود. پسته احمدآقایی نیز شکلی کشیده دارد و معمولاً برای بسته‌بندی هدیه و صادراتی مورد توجه است.",
-      "پسته فندقی به دلیل حجم بالای تولید، پرمصرف‌ترین رقم پسته کشور محسوب می‌شود و دانه‌ای گرد و متوسط دارد. در مقابل، پسته کله‌قوچی با دانه‌ای درشت و گرد، درشت‌ترین رقم پسته ایران است.",
-      "انتخاب رقم مناسب معمولاً بر اساس بازار هدف، نوع مصرف (خام، بوداده یا صنعتی) و ترجیح ظاهری خریدار تعیین می‌شود.",
-    ],
-    coverImage: "/images/redesign/article-1.webp",
-    relatedProductSlugs: [
-      "pesteh-akbari",
-      "pesteh-ahmad-aghaei",
-      "pesteh-fandoghi",
-      "pesteh-kalleghouchi",
-    ],
-    seoTitle: "آشنایی با ارقام اصلی پسته ایران | دانشنامه زرین پسته باقری",
-    seoDescription:
-      "معرفی رقم‌های اکبری، احمدآقایی، فندقی و کله‌قوچی و تفاوت‌های ظاهری آن‌ها برای خریداران عمده و صادراتی.",
-    featured: true,
-  },
-  {
-    slug: "tafavot-anva-maghz-pesteh",
-    title: "تفاوت انواع مغز پسته در کاربردهای صنعتی",
-    shortDescription:
-      "بررسی تفاوت مغز پسته سبز، مغز دوپوست، خلال و پودر پسته برای مصارف صنایع غذایی.",
-    content: [
-      "مغز پسته بسته به میزان فرآوری، در چند شکل مختلف در صنایع غذایی مورد استفاده قرار می‌گیرد. هر شکل، کاربرد و ویژگی‌های خاص خود را دارد.",
-      "مغز پسته سبز از پوست‌گیری کامل پسته به‌دست می‌آید و به دلیل رنگ طبیعی سبز، بیشتر در صنایع بستنی و شیرینی مورد استفاده قرار می‌گیرد. مغز پسته دوپوست، پوست نازک دور خود را حفظ کرده و معمولاً در مراحل بعدی فرآوری می‌شود.",
-      "خلال پسته از برش نازک مغز به‌دست می‌آید و عمدتاً برای تزئین شیرینی، بستنی و شکلات استفاده می‌شود. پودر پسته نیز از آسیاب مغز پسته تهیه می‌شود و در فرمولاسیون محصولات غذایی ترکیبی کاربرد دارد.",
-      "انتخاب نوع مناسب مغز پسته به فرآیند تولید و محصول نهایی کارخانه بستگی دارد.",
-    ],
-    coverImage: "/images/redesign/article-2.webp",
-    relatedProductSlugs: [
-      "maghz-pesteh-sabz",
-      "maghz-pesteh-dopoost",
-      "khalal-pesteh",
-      "pesteh-poudr",
-    ],
-    seoTitle: "تفاوت انواع مغز پسته در کاربردهای صنعتی | دانشنامه زرین پسته باقری",
-    seoDescription:
-      "بررسی تفاوت مغز پسته سبز، مغز دوپوست، خلال و پودر پسته و کاربرد هر یک در صنایع غذایی.",
-    featured: true,
-  },
-  {
-    slug: "negahdari-peste-kham",
-    title: "نکات نگهداری پسته خام و بوداده",
-    shortDescription:
-      "راهنمای کلی نگهداری پسته برای حفظ کیفیت در انبار و طول مسیر حمل.",
-    content: [
-      "نگهداری صحیح پسته، چه در مرحله انبارداری و چه در طول مسیر حمل، نقش مهمی در حفظ کیفیت محصول دارد.",
-      "به‌طور کلی، پسته باید در محلی خشک و خنک، دور از رطوبت و نور مستقیم آفتاب نگهداری شود. نوسان دما و رطوبت بالا می‌تواند بر کیفیت ظاهری و ماندگاری محصول اثر بگذارد.",
-      "برای حمل‌ونقل حجم عمده، انتخاب بسته‌بندی مناسب متناسب با فاصله و شرایط اقلیمی مسیر توصیه می‌شود.",
-    ],
-    coverImage: "/images/redesign/article-3.webp",
-    relatedProductSlugs: ["pesteh-fandoghi", "pesteh-akbari"],
-    seoTitle: "نکات نگهداری پسته خام و بوداده | دانشنامه زرین پسته باقری",
-    seoDescription:
-      "راهنمای کلی نگهداری پسته خام و بوداده برای حفظ کیفیت در انبار و طول مسیر حمل.",
-    featured: false,
-  },
-];
+type ArticleRow = {
+  slug: string;
+  title: string;
+  short_description: string;
+  content: string[] | null;
+  cover_image: string | null;
+  related_product_slugs: string[] | null;
+  seo_title: string;
+  seo_description: string;
+  featured: boolean;
+};
 
-export function getArticleBySlug(slug: string): Article | undefined {
-  return articles.find((article) => article.slug === slug);
+const SELECT_COLUMNS =
+  "slug, title, short_description, content, cover_image, related_product_slugs, seo_title, seo_description, featured";
+
+function mapArticle(row: ArticleRow): Article {
+  return {
+    slug: row.slug,
+    title: row.title,
+    shortDescription: row.short_description,
+    content: row.content ?? [],
+    coverImage: row.cover_image,
+    relatedProductSlugs: row.related_product_slugs ?? [],
+    seoTitle: row.seo_title,
+    seoDescription: row.seo_description,
+    featured: row.featured,
+  };
 }
 
-export function getFeaturedArticles(): Article[] {
+export async function getAllArticles(): Promise<Article[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("articles")
+    .select(SELECT_COLUMNS)
+    .order("sort_order", { ascending: true });
+  if (error) throw new Error(`خطا در دریافت مقالات: ${error.message}`);
+  return (data ?? []).map(mapArticle);
+}
+
+export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("articles").select(SELECT_COLUMNS).eq("slug", slug).maybeSingle();
+  if (error) throw new Error(`خطا در دریافت مقاله: ${error.message}`);
+  return data ? mapArticle(data) : undefined;
+}
+
+export async function getFeaturedArticles(): Promise<Article[]> {
+  const articles = await getAllArticles();
   return articles.filter((article) => article.featured);
-}
-
-export function getRelatedArticles(article: Article) {
-  return article.relatedProductSlugs.length ? article.relatedProductSlugs : [];
 }

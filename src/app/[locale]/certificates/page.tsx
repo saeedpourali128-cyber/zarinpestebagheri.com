@@ -4,7 +4,9 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Badge } from "@/components/ui/Badge";
-import { certificates } from "@/lib/data/certificates";
+import { getAllCertificates } from "@/lib/data/certificates";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("certificatesPage");
@@ -25,6 +27,7 @@ export default async function CertificatesPage({
 
   const t = await getTranslations("certificatesPage");
   const tCommon = await getTranslations("common");
+  const certificates = await getAllCertificates();
 
   return (
     <Container className="py-10 sm:py-14">

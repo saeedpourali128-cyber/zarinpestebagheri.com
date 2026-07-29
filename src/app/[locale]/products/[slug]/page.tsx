@@ -10,17 +10,18 @@ import { ProductGallery } from "@/components/redesign/ProductGallery";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { productJsonLd } from "@/lib/seo/jsonld";
-import { getProductBySlug, getRelatedProducts, products } from "@/lib/data/products";
+import { getProductBySlug, getRelatedProducts } from "@/lib/data/products";
 import { getArticleBySlug } from "@/lib/data/articles";
-import { certificates } from "@/lib/data/certificates";
+import { getAllCertificates } from "@/lib/data/certificates";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
 import { siteConfig } from "@/lib/config/site";
 import type { ProductSpec } from "@/lib/types/product";
 
-export function generateStaticParams() { return products.map((product) => ({ slug: product.slug })); }
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
   if (!product) return {};
   return { title: product.seoTitle, description: product.seoDescription, alternates: { canonical: `/products/${product.slug}` }, openGraph: { title: product.seoTitle, description: product.seoDescription, url: `/products/${product.slug}` } };
 }
@@ -30,13 +31,22 @@ const specOrder: (keyof ProductSpec)[] = ["cultivar", "sizeOz", "opennessType", 
 export default async function ProductDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
   if (!product || !product.mainImage) notFound();
 
   const t = await getTranslations("products");
   const tCommon = await getTranslations("common");
-  const relatedProducts = getRelatedProducts(product).slice(0, 4);
-  const relatedArticles = product.relatedArticleSlugs.map(getArticleBySlug).filter((article): article is NonNullable<typeof article> => Boolean(article));
+  const [related, relatedArticleResults, certificates, settings] = await Promise.all([
+    getRelatedProducts(product),
+    Promise.all(product.relatedArticleSlugs.map((articleSlug) => getArticleBySlug(articleSlug))),
+    getAllCertificates(),
+    getSiteSettings(),
+  ]);
+  const whatsappHref = buildWhatsappLink(settings, product.title);
+  const relatedProducts = related.slice(0, 4);
+  const relatedArticles = relatedArticleResults.filter(
+    (article): article is NonNullable<typeof article> => Boolean(article)
+  );
   const specs = specOrder.filter((key) => product.specs[key]).map((key) => ({ key, label: t(`specLabels.${key}`), value: product.specs[key] as string }));
 
   const chips = [
@@ -69,8 +79,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 ))}
               </div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <PriceInquiryButton label="استعلام قیمت و موجودی از طریق واتساپ" pendingNotice="شماره واتساپ در حال تکمیل است" productName={product.title} variant="primary" className="flex-1" />
-                <DownloadCatalogButton label="دانلود برگه مشخصات (PDF)" variant="secondary" className="flex-1" />
+                <PriceInquiryButton href={whatsappHref} label="استعلام قیمت و موجودی از طریق واتساپ" pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="flex-1" />
+                <DownloadCatalogButton href={settings.catalogUrl} label="دانلود برگه مشخصات (PDF)" pendingLabel="برگه مشخصات در حال تکمیل است" variant="secondary" className="flex-1" />
               </div>
             </div>
           </div>

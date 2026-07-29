@@ -6,11 +6,14 @@ import { DownloadCatalogButton } from "@/components/cta/DownloadCatalogButton";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { getFeaturedProducts } from "@/lib/data/products";
-import { factoryImages } from "@/lib/data/factory";
-import { certificates } from "@/lib/data/certificates";
+import { getFactoryImages } from "@/lib/data/factory";
+import { getAllCertificates } from "@/lib/data/certificates";
 import { getFeaturedArticles } from "@/lib/data/articles";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
 import { siteConfig } from "@/lib/config/site";
 import { HomeHeroSlider } from "@/components/redesign/HomeHeroSlider";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: siteConfig.legalName,
@@ -36,8 +39,16 @@ const sideLinks: Array<[string, string, string]> = [
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const products = getFeaturedProducts().slice(0, 5);
-  const articles = getFeaturedArticles().slice(0, 3);
+  const [featuredProducts, featuredArticles, factoryImages, certificates, settings] = await Promise.all([
+    getFeaturedProducts(),
+    getFeaturedArticles(),
+    getFactoryImages(),
+    getAllCertificates(),
+    getSiteSettings(),
+  ]);
+  const products = featuredProducts.slice(0, 5);
+  const articles = featuredArticles.slice(0, 3);
+  const whatsappHref = buildWhatsappLink(settings);
 
   return (
     <>
@@ -61,13 +72,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <PriceInquiryButton
+                href={whatsappHref}
                 label="استعلام قیمت"
                 pendingNotice="اطلاعات تماس در حال تکمیل است"
                 variant="primary"
                 className="border-gold-500 bg-gold-500 text-forest-950 shadow-[0_10px_28px_rgba(0,0,0,.20)] hover:border-gold-600 hover:bg-gold-600"
               />
               <DownloadCatalogButton
+                href={settings.catalogUrl}
                 label="دانلود کاتالوگ"
+                pendingLabel="کاتالوگ در حال تکمیل است"
                 variant="secondary"
                 className="border-white/70 bg-forest-950/25 text-white shadow-[0_10px_28px_rgba(0,0,0,.16)] backdrop-blur-sm hover:border-gold-500 hover:bg-white/10 hover:text-gold-500"
               />
@@ -147,7 +161,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-forest-900 px-7 py-7 text-center text-cream-50 sm:flex-row sm:text-right">
               <div><b className="text-lg">برای دریافت اطلاعات بیشتر و استعلام قیمت با ما در ارتباط باشید</b><p className="mt-1 text-xs text-cream-100/65">واحد فروش آماده پاسخ‌گویی به سفارش‌های عمده و صادراتی است.</p></div>
-              <PriceInquiryButton label="استعلام قیمت از طریق واتساپ" pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="shrink-0" />
+              <PriceInquiryButton href={whatsappHref} label="استعلام قیمت از طریق واتساپ" pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="shrink-0" />
             </div>
           </div>
 

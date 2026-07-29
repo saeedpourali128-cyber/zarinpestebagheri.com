@@ -3,7 +3,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
-import { contactInfo, siteConfig } from "@/lib/config/site";
+import { siteConfig } from "@/lib/config/site";
+import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("contactPage");
@@ -25,6 +28,7 @@ export default async function ContactPage({
   const t = await getTranslations("contactPage");
   const tCommon = await getTranslations("common");
   const tFooter = await getTranslations("footer");
+  const settings = await getSiteSettings();
 
   return (
     <Container className="py-10 sm:py-14">
@@ -46,28 +50,31 @@ export default async function ContactPage({
           <dl className="mt-5 space-y-4 text-sm">
             <div>
               <dt className="text-ink-500">{tFooter("addressLabel")}</dt>
-              <dd className="mt-1 text-ink-900">{contactInfo.address}</dd>
+              <dd className="mt-1 text-ink-900">{settings.address ?? tCommon("pending")}</dd>
             </div>
             <div>
               <dt className="text-ink-500">{tFooter("phoneLabel")}</dt>
               <dd className="mt-1 text-ink-900">
-                {contactInfo.phone ?? tCommon("pending")}
+                {settings.phone ?? tCommon("pending")}
               </dd>
             </div>
             <div>
               <dt className="text-ink-500">{tFooter("emailLabel")}</dt>
               <dd className="mt-1 text-ink-900">
-                {contactInfo.email ?? tCommon("pending")}
+                {settings.email ?? tCommon("pending")}
               </dd>
             </div>
             <div>
               <dt className="text-ink-500">{t("whatsappHeading")}</dt>
-              <dd className="mt-1 text-ink-900">{t("whatsappPending")}</dd>
+              <dd className="mt-1 text-ink-900">
+                {settings.whatsappEnabled && settings.whatsappNumber ? settings.whatsappNumber : t("whatsappPending")}
+              </dd>
             </div>
           </dl>
 
           <div className="mt-8">
             <PriceInquiryButton
+              href={buildWhatsappLink(settings)}
               label={tCommon("priceInquiry")}
               pendingNotice={tCommon("pending")}
               variant="primary"
