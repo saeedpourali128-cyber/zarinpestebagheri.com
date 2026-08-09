@@ -30,12 +30,12 @@ export default async function FactoryPage({ params }: { params: Promise<{ locale
   const t = await getTranslations("factoryPage");
   const tCommon = await getTranslations("common");
   const [factoryImages, machinery, certificates, settings] = await Promise.all([
-    getFactoryImages(),
-    getMachinery(),
-    getAllCertificates(),
-    getSiteSettings(),
+    getFactoryImages(locale as "fa" | "en" | "ar" | "ru"),
+    getMachinery(locale as "fa" | "en" | "ar" | "ru"),
+    getAllCertificates(locale as "fa" | "en" | "ar" | "ru"),
+    getSiteSettings(locale as "fa" | "en" | "ar" | "ru"),
   ]);
-  const whatsappHref = buildWhatsappLink(settings);
+  const whatsappHref = buildWhatsappLink(settings, undefined, locale as "fa" | "en" | "ar" | "ru");
 
   return (
     <>

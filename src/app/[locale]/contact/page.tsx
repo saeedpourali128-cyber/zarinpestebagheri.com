@@ -28,7 +28,7 @@ export default async function ContactPage({
   const t = await getTranslations("contactPage");
   const tCommon = await getTranslations("common");
   const tFooter = await getTranslations("footer");
-  const settings = await getSiteSettings();
+  const settings = await getSiteSettings(locale as "fa" | "en" | "ar" | "ru");
 
   return (
     <Container className="py-10 sm:py-14">
@@ -74,7 +74,7 @@ export default async function ContactPage({
 
           <div className="mt-8">
             <PriceInquiryButton
-              href={buildWhatsappLink(settings)}
+              href={buildWhatsappLink(settings, undefined, locale as "fa" | "en" | "ar" | "ru")}
               label={tCommon("priceInquiry")}
               pendingNotice={tCommon("pending")}
               variant="primary"

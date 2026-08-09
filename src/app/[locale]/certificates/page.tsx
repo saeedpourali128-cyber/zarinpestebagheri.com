@@ -27,7 +27,7 @@ export default async function CertificatesPage({
 
   const t = await getTranslations("certificatesPage");
   const tCommon = await getTranslations("common");
-  const certificates = await getAllCertificates();
+  const certificates = await getAllCertificates(locale as "fa" | "en" | "ar" | "ru");
 
   return (
     <Container className="py-10 sm:py-14">

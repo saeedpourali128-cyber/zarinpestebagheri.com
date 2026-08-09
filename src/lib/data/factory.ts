@@ -1,18 +1,48 @@
-import { createClient } from "@/lib/supabase/server";
+﻿import { createClient } from "@/lib/supabase/server";
 import type { FactoryImage } from "@/lib/types/factory";
+import type { AppLocale } from "@/lib/i18n/routing";
 
-const SELECT_COLUMNS = "slug, caption, image";
+type I18n<T> = Partial<Record<AppLocale, T>> | null;
 
-function mapFactoryImage(row: { slug: string; caption: string; image: string | null }): FactoryImage {
-  return { slug: row.slug, caption: row.caption, image: row.image };
+type FactoryRow = {
+  slug: string;
+  caption: string;
+  caption_i18n: I18n<string>;
+  image: string | null;
+};
+
+const SELECT_COLUMNS =
+  "slug, caption, caption_i18n, image";
+
+function mapFactoryImage(
+  row: FactoryRow,
+  locale: AppLocale
+): FactoryImage {
+  return {
+    slug: row.slug,
+    caption:
+      row.caption_i18n?.[locale] ?? row.caption,
+    image: row.image,
+  };
 }
 
-export async function getFactoryImages(): Promise<FactoryImage[]> {
+export async function getFactoryImages(
+  locale: AppLocale = "fa"
+): Promise<FactoryImage[]> {
   const supabase = await createClient();
+
   const { data, error } = await supabase
     .from("factory_images")
     .select(SELECT_COLUMNS)
     .order("sort_order", { ascending: true });
-  if (error) throw new Error(`خطا در دریافت تصاویر کارخانه: ${error.message}`);
-  return (data ?? []).map(mapFactoryImage);
+
+  if (error) {
+    throw new Error(
+      `Factory images fetch failed: ${error.message}`
+    );
+  }
+
+  return (data ?? []).map((row) =>
+    mapFactoryImage(row as FactoryRow, locale)
+  );
 }

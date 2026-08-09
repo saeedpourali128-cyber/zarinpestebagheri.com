@@ -1,5 +1,6 @@
-import { createClient } from "@/lib/supabase/server";
+﻿import { createClient } from "@/lib/supabase/server";
 import type { SiteSettings } from "@/lib/types/site-settings";
+import type { AppLocale } from "@/lib/i18n/routing";
 
 const DEFAULT_SETTINGS: SiteSettings = {
   phone: null,
@@ -10,16 +11,39 @@ const DEFAULT_SETTINGS: SiteSettings = {
   catalogUrl: null,
 };
 
-const WHATSAPP_MESSAGE = "با سلام، در خصوص قیمت محصولات زرین پسته باقری نیاز به استعلام دارم.";
+const WHATSAPP_MESSAGES: Record<AppLocale, string> = {
+  fa: "با سلام، در خصوص قیمت محصولات زرین پسته باقری نیاز به استعلام دارم.",
+  en: "Hello, I would like to request pricing information for Zarrin Pesteh Bagheri products.",
+  ar: "مرحباً، أود الاستفسار عن أسعار منتجات زرين پسته باقري.",
+  ru: "Здравствуйте! Я хотел(а) бы получить информацию о ценах на продукцию Zarrin Pesteh Bagheri.",
+};
 
-export async function getSiteSettings(): Promise<SiteSettings> {
+const PRODUCT_LABELS: Record<AppLocale, string> = {
+  fa: "محصول مورد نظر",
+  en: "Product",
+  ar: "المنتج",
+  ru: "Товар",
+};
+
+export async function getSiteSettings(
+  _locale: AppLocale = "fa"
+): Promise<SiteSettings> {
   const supabase = await createClient();
+
   const { data, error } = await supabase
     .from("site_settings")
-    .select("phone, whatsapp_number, whatsapp_enabled, email, address, catalog_url")
+    .select(
+      "phone, whatsapp_number, whatsapp_enabled, email, address, catalog_url"
+    )
     .eq("id", 1)
     .maybeSingle();
-  if (error) throw new Error(`خطا در دریافت تنظیمات سایت: ${error.message}`);
+
+  if (error) {
+    throw new Error(
+      `Site settings fetch failed: ${error.message}`
+    );
+  }
+
   if (!data) return DEFAULT_SETTINGS;
 
   return {
@@ -32,9 +56,23 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   };
 }
 
-/** لینک نهایی wa.me را می‌سازد؛ اگر واتساپ غیرفعال یا شماره‌ای ثبت نشده باشد، null برمی‌گرداند. */
-export function buildWhatsappLink(settings: SiteSettings, productName?: string): string | null {
-  if (!settings.whatsappEnabled || !settings.whatsappNumber) return null;
-  const text = productName ? `${WHATSAPP_MESSAGE} (محصول مورد نظر: ${productName})` : WHATSAPP_MESSAGE;
+export function buildWhatsappLink(
+  settings: SiteSettings,
+  productName?: string,
+  locale: AppLocale = "fa"
+): string | null {
+  if (
+    !settings.whatsappEnabled ||
+    !settings.whatsappNumber
+  ) {
+    return null;
+  }
+
+  const baseMessage = WHATSAPP_MESSAGES[locale];
+
+  const text = productName
+    ? `${baseMessage} (${PRODUCT_LABELS[locale]}: ${productName})`
+    : baseMessage;
+
   return `https://wa.me/${settings.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }

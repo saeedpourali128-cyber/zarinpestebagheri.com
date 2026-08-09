@@ -62,14 +62,14 @@ const features =
   ] as const);
   const [featuredProducts, featuredArticles, factoryImages, certificates, settings] = await Promise.all([
     getFeaturedProducts(locale as "fa" | "en" | "ar" | "ru"),
-    getFeaturedArticles(),
-    getFactoryImages(),
-    getAllCertificates(),
-    getSiteSettings(),
+    getFeaturedArticles(locale as "fa" | "en" | "ar" | "ru"),
+    getFactoryImages(locale as "fa" | "en" | "ar" | "ru"),
+    getAllCertificates(locale as "fa" | "en" | "ar" | "ru"),
+    getSiteSettings(locale as "fa" | "en" | "ar" | "ru"),
   ]);
   const products = featuredProducts.slice(0, 5);
   const articles = featuredArticles.slice(0, 3);
-  const whatsappHref = buildWhatsappLink(settings);
+  const whatsappHref = buildWhatsappLink(settings, undefined, locale as "fa" | "en" | "ar" | "ru");
 
   return (
     <>

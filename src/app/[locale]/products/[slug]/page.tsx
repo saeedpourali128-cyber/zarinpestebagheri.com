@@ -38,11 +38,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const tCommon = await getTranslations("common");
   const [related, relatedArticleResults, certificates, settings] = await Promise.all([
     getRelatedProducts(product),
-    Promise.all(product.relatedArticleSlugs.map((articleSlug) => getArticleBySlug(articleSlug))),
-    getAllCertificates(),
-    getSiteSettings(),
+    Promise.all(product.relatedArticleSlugs.map((articleSlug) => getArticleBySlug(articleSlug, locale as "fa" | "en" | "ar" | "ru"))),
+    getAllCertificates(locale as "fa" | "en" | "ar" | "ru"),
+    getSiteSettings(locale as "fa" | "en" | "ar" | "ru"),
   ]);
-  const whatsappHref = buildWhatsappLink(settings, product.title);
+  const whatsappHref = buildWhatsappLink(settings, product.title, locale as "fa" | "en" | "ar" | "ru");
   const relatedProducts = related.slice(0, 4);
   const relatedArticles = relatedArticleResults.filter(
     (article): article is NonNullable<typeof article> => Boolean(article)

@@ -18,8 +18,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const article = await getArticleBySlug(slug);
+  const { slug, locale } = await params;
+  const article = await getArticleBySlug(slug, locale as "fa" | "en" | "ar" | "ru");
   if (!article) return {};
 
   return {
@@ -43,7 +43,7 @@ export default async function ArticleDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const article = await getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug, locale as "fa" | "en" | "ar" | "ru");
   if (!article) notFound();
 
   const t = await getTranslations("knowledgeBasePage");

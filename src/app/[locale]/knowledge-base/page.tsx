@@ -27,7 +27,7 @@ export default async function KnowledgeBasePage({
 
   const t = await getTranslations("knowledgeBasePage");
   const tCommon = await getTranslations("common");
-  const articles = await getAllArticles();
+  const articles = await getAllArticles(locale as "fa" | "en" | "ar" | "ru");
 
   return (
     <Container className="py-10 sm:py-14">
