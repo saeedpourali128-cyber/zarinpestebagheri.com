@@ -373,4 +373,39 @@
     },
     "productImage": "Image {number} of {title}"
   }
+,
+  "productDetail": {
+    "exportSuffix": "for Export",
+    "tagline": "Large size, well-opened shells, green and uniform kernels",
+    "priceInquiry": "Check price and availability on WhatsApp",
+    "downloadSpec": "Download specification sheet (PDF)",
+    "technicalSpecs": "Technical specifications",
+    "premiumAlt": "Premium Iranian pistachios",
+    "shelfLifeLabel": "Shelf life",
+    "shelfLifeValue": "12 months under proper storage conditions",
+    "usagesTarget": "Applications and target customers",
+    "exportMarkets": "Suitable for export markets",
+    "relatedProducts": "Related products",
+    "viewProduct": "View product →",
+    "benefitAlt": "Premium export pistachios",
+    "buyingGuide": "Buying guide for {title}",
+    "buyingGuideBody": "For wholesale purchases, kernel size, openness percentage, packaging type and destination market are among the main selection criteria. Our sales team provides the exact shipment specifications based on your order requirements.",
+    "readFullArticle": "Read full article →",
+    "negotiable": "Negotiable",
+    "yes": "Yes",
+    "custom": "Custom",
+    "byOrder": "Based on order",
+    "chips": {
+      "minOrder": "Minimum order",
+      "exportSuitable": "Suitable for export",
+      "packagingType": "Packaging type",
+      "opennessType": "Openness type",
+      "sizeOz": "Size / oz"
+    },
+    "benefits": [
+      ["Reliable export", "Export packaging and document coordination"],
+      ["Guaranteed quality", "Standard processing and multi-stage quality control"],
+      ["Precise selection", "Uniform kernels with high openness"]
+    ]
+  }
 }
