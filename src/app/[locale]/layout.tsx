@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { siteConfig } from "@/lib/config/site";
@@ -15,24 +15,48 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: `${siteConfig.name} | ${siteConfig.legalName}`,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description:
-    "تأمین، بسته‌بندی و صادرات پسته و مغز پسته از کاشمر، خراسان رضوی — زرین پسته باقری، برند تجاری شرکت زرین دانه ترشیز.",
-  openGraph: {
-    type: "website",
-    siteName: siteConfig.name,
-    locale: "fa_IR",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const tCommon = await getTranslations({
+    locale,
+    namespace: "common",
+  });
+
+  const tHome = await getTranslations({
+    locale,
+    namespace: "homeRedesign",
+  });
+
+  const openGraphLocales: Record<string, string> = {
+    fa: "fa_IR",
+    en: "en_US",
+    ar: "ar_SA",
+    ru: "ru_RU",
+  };
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: `${tCommon("siteName")} | ${tCommon("legalName")}`,
+      template: `%s | ${tCommon("siteName")}`,
+    },
+    description: tHome("heroBody"),
+    openGraph: {
+      type: "website",
+      siteName: tCommon("siteName"),
+      locale: openGraphLocales[locale] ?? "fa_IR",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",

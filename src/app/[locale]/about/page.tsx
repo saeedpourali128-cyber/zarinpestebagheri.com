@@ -39,7 +39,7 @@ export default async function AboutPage({
 
       <PlaceholderImage
         src="/images/redesign/home-hero.webp"
-        alt="محصولات پسته زرین دانه ترشیز"
+        alt={t("title")}
         aspect="aspect-[21/9]"
         className="mt-8 rounded-lg"
       />

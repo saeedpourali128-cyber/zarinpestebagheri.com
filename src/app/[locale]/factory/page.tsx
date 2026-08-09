@@ -43,7 +43,7 @@ export default async function FactoryPage({ params }: { params: Promise<{ locale
             <div className="space-y-8">
               <div className="grid items-center gap-7 lg:grid-cols-[1.05fr_.95fr]">
                 <div className="relative min-h-[300px] overflow-hidden rounded-[26px] border border-line-200 bg-white shadow-[0_18px_55px_rgba(10,50,32,.1)] sm:min-h-[390px]">
-                  <Image src="/images/redesign/factory-hero.webp" alt="نمای کارخانه زرین پسته باقری" fill priority sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+                  <Image src="/images/redesign/factory-hero.webp" alt={tr("heroAlt")} fill priority sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
                 </div>
                 <div>
                   <h1 className="text-3xl font-black leading-[1.55] text-forest-900 sm:text-4xl">{tr("title")}</h1>

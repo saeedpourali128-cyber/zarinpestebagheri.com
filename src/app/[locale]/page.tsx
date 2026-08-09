@@ -10,16 +10,35 @@ import { getFactoryImages } from "@/lib/data/factory";
 import { getAllCertificates } from "@/lib/data/certificates";
 import { getFeaturedArticles } from "@/lib/data/articles";
 import { getSiteSettings, buildWhatsappLink } from "@/lib/data/site-settings";
-import { siteConfig } from "@/lib/config/site";
 import { HomeHeroSlider } from "@/components/redesign/HomeHeroSlider";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: siteConfig.legalName,
-  description: "تأمین، بسته‌بندی و صادرات پسته و مغز پسته از کاشمر، خراسان رضوی.",
-  alternates: { canonical: "/" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const tCommon = await getTranslations({
+    locale,
+    namespace: "common",
+  });
+
+  const tHome = await getTranslations({
+    locale,
+    namespace: "homeRedesign",
+  });
+
+  return {
+    title: tCommon("legalName"),
+    description: tHome("heroBody"),
+    alternates: {
+      canonical: `/${locale}`,
+    },
+  };
+}
 
 
 
@@ -182,7 +201,7 @@ const features =
 
             <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-forest-900 px-7 py-7 text-center text-cream-50 sm:flex-row sm:text-right">
               <div><b className="text-lg">{t("salesTitle")}</b><p className="mt-1 text-xs text-cream-100/65">{t("salesBody")}</p></div>
-              <PriceInquiryButton href={whatsappHref} label={tHome("hero.ctaPriceInquiry")} pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="shrink-0" />
+              <PriceInquiryButton href={whatsappHref} label={tHome("hero.ctaPriceInquiry")} pendingNotice={tCommon("pending")} variant="primary" className="shrink-0" />
             </div>
           </div>
 
