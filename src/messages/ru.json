@@ -1,0 +1,376 @@
+{
+  "common": {
+    "siteName": "Zarrin Pesteh Bagheri",
+    "legalName": "Zarrin Daneh Torshiz Co.",
+    "skipToContent": "Перейти к основному содержанию",
+    "pending": "Информация уточняется",
+    "sampleUntilRealDocument": "Sample until the official document is uploaded",
+    "downloadCatalog": "Скачать каталог",
+    "priceInquiry": "Запросить цену",
+    "learnMore": "Подробнее",
+    "viewAllProducts": "Все продукты",
+    "viewAllArticles": "Все статьи",
+    "relatedProducts": "Похожие продукты",
+    "relatedArticles": "Похожие статьи",
+    "breadcrumbHome": "Главная",
+    "readArticle": "Читать статью",
+    "backToList": "Назад к списку",
+    "knowledgeBase": "База знаний о фисташках",
+    "siteMenu": "Меню сайта",
+    "breadcrumbLabel": "Навигация",
+    "address": "Адрес",
+    "phone": "Телефон",
+    "email": "Эл. почта",
+    "whatsappInquiry": "Запросить цену в WhatsApp",
+    "catalogPending": "Каталог готовится",
+    "contactPending": "Контактные данные уточняются",
+    "whatsappPending": "Номер WhatsApp уточняется",
+    "documentsPending": "Документы готовятся",
+    "locationLabel": "Кашмар, Разави-Хорасан, Иран"
+  },
+  "nav": {
+    "home": "Главная",
+    "about": "О компании",
+    "factory": "Производство",
+    "machinery": "Оборудование",
+    "products": "Продукция",
+    "contact": "Контакты",
+    "priceInquiry": "Запросить цену",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню"
+  },
+  "languageSwitcher": {
+    "label": "Язык",
+    "comingSoon": "Скоро"
+  },
+  "footer": {
+    "about": "Zarrin Pesteh Bagheri — торговый бренд компании Zarrin Daneh Torshiz, специализирующейся на поставках, упаковке и экспорте фисташек и фисташковых ядер из Кашмара, Иран.",
+    "quickLinks": "Быстрые ссылки",
+    "productsTitle": "Продукция",
+    "contactTitle": "Контакты",
+    "addressLabel": "Адрес",
+    "phoneLabel": "Телефон",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Эл. почта",
+    "rightsReserved": "Все права принадлежат Zarrin Daneh Torshiz Co.",
+    "sitemapLink": "Карта сайта"
+  },
+  "about": {
+    "title": "О компании",
+    "intro": "Компания Zarrin Daneh Torshiz под брендом Zarrin Pesteh Bagheri работает в Кашмаре, провинция Разави-Хорасан, и поставляет, упаковывает и экспортирует фисташки и фисташковые ядра оптовикам, переработчикам и международным покупателям.",
+    "activityHeading": "Наша деятельность",
+    "activityBody": "Мы закупаем фисташки напрямую у производителей Кашмарского региона, затем перерабатываем, сортируем, упаковываем и готовим продукцию к оптовой продаже и экспорту.",
+    "locationHeading": "Местоположение",
+    "locationBody": "Кашмар, Разави-Хорасан — один из известных регионов производства фисташек в Иране.",
+    "capacityHeading": "Объём поставок",
+    "capacityBody": "Годовая мощность поставок — более 2 000 тонн, включая крупные и регулярные заказы.",
+    "audienceHeading": "Наши клиенты",
+    "audienceBody": "Оптовые покупатели, пищевые и орехоперерабатывающие предприятия, международные клиенты и торговые партнёры.",
+    "valuesHeading": "Как мы работаем",
+    "values": [
+      {
+        "title": "Прямые связи с производителями",
+        "description": "Снижаем число посредников за счёт прямых закупок у производителей Кашмара."
+      },
+      {
+        "title": "Упаковка под заказ",
+        "description": "Подбираем тип и размер упаковки под требования клиента."
+      },
+      {
+        "title": "Прямая поддержка продаж",
+        "description": "Отдел продаж напрямую отвечает на запросы цен и координирует заказы."
+      }
+    ]
+  },
+  "products": {
+    "title": "Продукция",
+    "description": "Сырые фисташки, ядра и сопутствующая продукция оптовыми партиями с индивидуальной упаковкой.",
+    "categories": {
+      "raw": "Сырые фисташки",
+      "kernel": "Фисташковые ядра",
+      "khalal": "Фисташковая соломка",
+      "powder": "Фисташковый порошок"
+    },
+    "viewProduct": "Смотреть продукт",
+    "specsHeading": "Характеристики продукта",
+    "usagesHeading": "Применение",
+    "targetMarketsHeading": "Целевые рынки",
+    "storageHeading": "Условия хранения",
+    "specLabels": {
+      "cultivar": "Сорт",
+      "sizeOz": "Размер (oz)",
+      "opennessType": "Тип раскрытия",
+      "kernelColor": "Цвет ядра",
+      "kernelPercentage": "Доля ядра",
+      "packagingType": "Тип упаковки",
+      "minOrder": "Минимальный заказ",
+      "storageConditions": "Условия хранения"
+    }
+  },
+  "factoryPage": {
+    "title": "Производство",
+    "description": "Фотографии участка подготовки, сортировки и упаковки продукции в Кашмаре.",
+    "noteHeading": "Примечание",
+    "note": "Фактические фотографии производства заменят текущие демонстрационные изображения после их получения."
+  },
+  "machineryPage": {
+    "title": "Оборудование",
+    "description": "Оборудование для очистки, сортировки, калибровки и упаковки фисташек.",
+    "capacityLabel": "Производительность",
+    "capacityPending": "Информация уточняется"
+  },
+  "certificatesPage": {
+    "title": "Сертификаты и лицензии",
+    "description": "Официальные сертификаты и разрешения будут опубликованы после получения окончательных документов.",
+    "placeholderNotice": "Показанные элементы являются примерами до загрузки официальных документов."
+  },
+  "knowledgeBasePage": {
+    "title": "База знаний о фисташках",
+    "description": "Короткие практические материалы о сортах, переработке, сортировке и хранении фисташек."
+  },
+  "contactPage": {
+    "title": "Контакты",
+    "description": "Свяжитесь с отделом продаж по вопросам цен, объёмов заказа и экспортной координации.",
+    "salesUnitHeading": "Отдел продаж",
+    "addressHeading": "Адрес",
+    "formNotice": "Форма обратной связи будет подключена к системе сообщений отдела продаж на следующем этапе.",
+    "whatsappHeading": "WhatsApp",
+    "whatsappPending": "Номер WhatsApp отдела продаж появится здесь после уточнения данных."
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "description": "Запрашиваемая страница недоступна.",
+    "backHome": "На главную"
+  },
+  "home": {
+    "hero": {
+      "titleLine1": "От производителей Хорасана",
+      "titleLine2": "На мировые рынки",
+      "subtitle": "Zarrin Daneh Torshiz Co.",
+      "ctaCatalog": "Скачать каталог",
+      "ctaPriceInquiry": "Запросить цену"
+    },
+    "intro": {
+      "heading": "Company introduction",
+      "body": "Zarrin Daneh Torshiz operates in Kashmar, a recognized pistachio-producing region in Razavi Khorasan. We source, pack and prepare pistachios and kernels for wholesalers, processors and export customers."
+    },
+    "whyUs": {
+      "heading": "Why Zarrin Pesteh Bagheri",
+      "items": []
+    },
+    "featuredProducts": {
+      "heading": "Избранная продукция",
+      "description": "A selection of raw pistachios and kernels in different grades."
+    },
+    "supplyExport": {
+      "heading": "Supply capacity & export services",
+      "capacityLabel": "Annual supply capacity",
+      "capacityValue": "More than 2,000 tons",
+      "body": "Wholesale supply for processors and distributors, with export packing and shipping coordination.",
+      "points": [
+        "Reliable high-volume supply",
+        "Custom packing for international transport",
+        "Direct sales response to export enquiries"
+      ]
+    },
+    "factory": {
+      "heading": "Производство",
+      "body": "A view of our preparation and packing facility in Kashmar.",
+      "cta": "View factory"
+    },
+    "machinery": {
+      "heading": "Оборудование",
+      "body": "Equipment used for cleaning, grading and packing.",
+      "cta": "View machinery"
+    },
+    "certificates": {
+      "heading": "Сертификаты и лицензии",
+      "body": "Official documents will be published here after verification.",
+      "cta": "View certificates"
+    },
+    "knowledgeBase": {
+      "heading": "База знаний",
+      "description": "Short articles about varieties, processing and storage.",
+      "cta": "View knowledge base"
+    },
+    "contactSales": {
+      "heading": "Связаться с продажами",
+      "body": "Contact us for pricing, order volume or export coordination.",
+      "cta": "Контакты"
+    }
+  },
+  "homeRedesign": {
+    "metaDescription": "Поставки, упаковка и экспорт фисташек и фисташковых ядер из Кашмара, Разави-Хорасан.",
+    "eyebrow": "От сада до мирового рынка",
+    "heroTitle": "Профессиональные поставки фисташек и ядер",
+    "heroHighlight": "От производителей Хорасана на мировые рынки",
+    "heroBody": "Более трёх десятилетий работая в фисташковой отрасли, Zarrin Daneh Torshiz ежегодно поставляет, подготавливает и упаковывает свыше 2 000 тонн фисташек и фисташковых ядер для внутреннего рынка и экспорта.",
+    "features": [
+      [
+        "30+",
+        "Более 30 лет",
+        "Опыт и экспертиза"
+      ],
+      [
+        "✦",
+        "Прямые поставки",
+        "От производителей Хорасана"
+      ],
+      [
+        "2 000",
+        "Мощность поставок",
+        "Тонн в год"
+      ],
+      [
+        "▣",
+        "Стандартная упаковка",
+        "Для внутреннего рынка и экспорта"
+      ],
+      [
+        "25+",
+        "География экспорта",
+        "Стран мира"
+      ]
+    ],
+    "sideLinks": [
+      [
+        "Почему Zarrin Pesteh Bagheri",
+        "Наши преимущества"
+      ],
+      [
+        "Продукция",
+        "Все продукты"
+      ],
+      [
+        "Сертификаты и лицензии",
+        "Смотреть все"
+      ],
+      [
+        "База знаний",
+        "Все статьи"
+      ]
+    ],
+    "factoryKicker": "Посмотрите наше",
+    "factoryTitle": "Производство",
+    "viewMore": "Подробнее →",
+    "salesTitle": "Свяжитесь с нами для получения информации и предложения",
+    "salesBody": "Отдел продаж готов обработать оптовые и экспортные запросы."
+  },
+  "factoryRedesign": {
+    "heroAlt": "Производство Zarrin Pesteh Bagheri",
+    "title": "Производство и технологический процесс",
+    "body": "От приёмки сырья до финальной упаковки мы применяем современные технологии и процедуры контроля качества, поддерживая безопасность и стабильность продукции на этапах обработки, сортировки и упаковки.",
+    "features": [
+      [
+        "Международные стандарты",
+        "Признанные процедуры и сертификация"
+      ],
+      [
+        "Современные технологии",
+        "Актуальное перерабатывающее оборудование"
+      ],
+      [
+        "Гигиенические требования",
+        "Контроль среды и безопасности продукта"
+      ],
+      [
+        "Многоэтапный контроль качества",
+        "Контроль от приёмки до упаковки"
+      ]
+    ],
+    "allMachinery": "Все оборудование →",
+    "certificatesNote": "Знаки ниже показывают структуру раздела. Официальные документы будут опубликованы после проверки и загрузки.",
+    "downloadDocuments": "Скачать документы",
+    "whyTitle": "Почему Zarrin Pesteh Bagheri?",
+    "benefits": [
+      [
+        "30+",
+        "Опыт и репутация",
+        "Более 30 лет"
+      ],
+      [
+        "♙",
+        "Профессиональная поддержка",
+        "И консультации"
+      ],
+      [
+        "▣",
+        "Стандартная упаковка",
+        "Для опта и экспорта"
+      ],
+      [
+        "↗",
+        "Своевременная поставка",
+        "На целевые рынки"
+      ],
+      [
+        "✓",
+        "Стабильное качество",
+        "Однородная продукция"
+      ]
+    ],
+    "ctaTitle": "Свяжитесь с отделом продаж по вопросам визита, сотрудничества или заказа",
+    "ctaBody": "Поддержка внутренних оптовых и экспортных заказов"
+  },
+  "productDetail": {
+    "exportSuffix": "экспортного качества",
+    "tagline": "Крупные, естественно раскрытые, зелёные и однородные ядра",
+    "quoteAvailability": "Узнать цену и наличие в WhatsApp",
+    "downloadSpec": "Скачать спецификацию (PDF)",
+    "specPending": "Спецификация готовится",
+    "technicalSpecs": "Технические характеристики",
+    "premiumAlt": "Премиальные иранские фисташки",
+    "shelfLife": "Срок хранения",
+    "shelfLifeValue": "12 месяцев при надлежащих условиях хранения",
+    "usesCustomers": "Применение и целевые клиенты",
+    "exportMarkets": "Подходит для экспортных рынков",
+    "markets": [
+      "Китай",
+      "ОАЭ",
+      "Германия",
+      "Турция",
+      "Ирак"
+    ],
+    "relatedProducts": "Похожие продукты",
+    "viewProduct": "Смотреть продукт →",
+    "benefitAlt": "Премиальные экспортные фисташки",
+    "benefits": [
+      [
+        "Надёжный экспорт",
+        "Экспортная упаковка и координация документов"
+      ],
+      [
+        "Контроль качества",
+        "Стандартная переработка и многоэтапный контроль"
+      ],
+      [
+        "Точный отбор",
+        "Однородные орехи с высокой раскрываемостью"
+      ]
+    ],
+    "buyingGuide": "Руководство по покупке: {title}",
+    "buyingGuideBody": "При оптовой закупке важны размер ореха, раскрываемость скорлупы, тип упаковки и рынок назначения. Отдел продаж подтверждает точные характеристики партии в соответствии с вашим заказом.",
+    "readFullArticle": "Читать статью полностью →",
+    "yes": "Да",
+    "negotiable": "По договорённости",
+    "custom": "По заказу",
+    "byOrder": "По заказу",
+    "minOrder": "Минимальный заказ",
+    "exportSuitable": "Для экспорта",
+    "packagingType": "Тип упаковки",
+    "opennessType": "Тип раскрытия",
+    "sizeOz": "Размер / oz"
+  },
+  "accessibility": {
+    "heroSlider": "Презентационные изображения Zarrin Daneh",
+    "showImage": "Показать изображение {number}",
+    "aboutImage": "Фисташковая продукция Zarrin Daneh Torshiz",
+    "footerImage": "Фисташки Zarrin Daneh Torshiz",
+    "slides": {
+      "facility": "Производственный комплекс Zarrin Daneh",
+      "quality": "Контроль качества и сортировка фисташковых ядер",
+      "orchard": "Фисташковый сад и ряды деревьев"
+    },
+    "productImage": "Изображение {number}: {title}"
+  }
+}

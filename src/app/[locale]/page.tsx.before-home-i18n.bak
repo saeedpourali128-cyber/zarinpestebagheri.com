@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { DownloadCatalogButton } from "@/components/cta/DownloadCatalogButton";
 import { PriceInquiryButton } from "@/components/cta/PriceInquiryButton";
@@ -21,47 +21,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const features = [
+  ["۳۰+", "بیش از ۳۰ سال", "سابقه و تجربه"],
+  ["✦", "تأمین مستقیم", "از کشاورزان خراسان"],
+  ["۲۰۰۰", "ظرفیت بیش از", "تن در سال"],
+  ["▣", "بسته‌بندی استاندارد", "و صادراتی"],
+  ["۲۵+", "صادرات به بیش از", "کشور جهان"],
+];
 
+const sideLinks: Array<[string, string, string]> = [
+  ["/about", "چرا زرین پسته باقری", "مزیت‌های رقابتی ما"],
+  ["/products", "محصولات", "مشاهده همه محصولات"],
+  ["/certificates", "گواهی‌ها و مجوزها", "مشاهده همه"],
+  ["/knowledge-base", "دانشنامه پسته", "مشاهده همه مقالات"],
+];
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-
-  const t = await getTranslations({
-    locale,
-    namespace: "homeRedesign",
-  });
-
-  const tHome = await getTranslations({
-    locale,
-    namespace: "home",
-  });
-
-  const tCommon = await getTranslations({
-    locale,
-    namespace: "common",
-  });
-
-const features =
-    t.raw("features") as Array<[string, string, string]>;
-
-  const sideCopy =
-    t.raw("sideLinks") as Array<[string, string]>;
-
-  const sidePaths = [
-    "/about",
-    "/products",
-    "/certificates",
-    "/knowledge-base",
-  ] as const;
-
-  const sideLinks = sidePaths.map((href, index) => [
-    href,
-    sideCopy[index]?.[0] ?? "",
-    sideCopy[index]?.[1] ?? "",
-  ] as const);
   const [featuredProducts, featuredArticles, factoryImages, certificates, settings] = await Promise.all([
-    getFeaturedProducts(locale as "fa" | "en" | "ar" | "ru"),
+    getFeaturedProducts(),
     getFeaturedArticles(),
     getFactoryImages(),
     getAllCertificates(),
@@ -79,30 +58,30 @@ const features =
         <div className="relative z-10 mx-auto flex min-h-[680px] w-full max-w-[1440px] items-center px-5 py-16 sm:min-h-[640px] sm:px-7 lg:min-h-[660px] lg:px-10">
           <div className="w-full max-w-[680px] py-6 text-right text-white [text-shadow:0_2px_18px_rgba(0,0,0,.28)] [&_[role=status]]:text-white/75 sm:py-8 lg:mr-auto lg:py-10">
             <span className="inline-flex items-center gap-2 rounded-full border border-gold-500/55 bg-forest-950/45 px-4 py-2 text-xs font-bold text-gold-500 shadow-sm backdrop-blur-sm">
-              {t("eyebrow")}
+              از باغ تا بازار جهانی
             </span>
 
             <h1 className="mt-5 text-3xl font-black leading-[1.55] text-white drop-shadow-[0_3px_12px_rgba(0,0,0,.35)] sm:text-4xl xl:text-[46px]">
-              {t("heroTitle")}
-              <span className="block text-gold-500">{t("heroHighlight")}</span>
+              تأمین تخصصی پسته و مغز پسته
+              <span className="block text-gold-500">از کشاورزان خراسان تا بازارهای جهانی</span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-sm leading-8 text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,.45)] sm:text-base">
-              {t("heroBody")}
+              با بیش از سه دهه تجربه در صنعت پسته، زرین دانه ترشیز از قلب کشاورزی ایران در خراسان رضوی، سالانه بیش از ۲۰۰۰ تن پسته و مغز پسته را با استانداردهای جهانی تأمین، بسته‌بندی و برای بازارهای داخلی و صادراتی آماده می‌کند.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <PriceInquiryButton
                 href={whatsappHref}
-                label={tHome("hero.ctaPriceInquiry")}
-                pendingNotice={tCommon("pending")}
+                label="استعلام قیمت"
+                pendingNotice="اطلاعات تماس در حال تکمیل است"
                 variant="primary"
                 className="border-gold-500 bg-gold-500 text-forest-950 shadow-[0_10px_28px_rgba(0,0,0,.20)] hover:border-gold-600 hover:bg-gold-600"
               />
               <DownloadCatalogButton
                 href={settings.catalogUrl}
-                label={tHome("hero.ctaCatalog")}
-                pendingLabel={tHome("hero.ctaCatalog")}
+                label="دانلود کاتالوگ"
+                pendingLabel="کاتالوگ در حال تکمیل است"
                 variant="secondary"
                 className="border-white/70 bg-forest-950/25 text-white shadow-[0_10px_28px_rgba(0,0,0,.16)] backdrop-blur-sm hover:border-gold-500 hover:bg-white/10 hover:text-gold-500"
               />
@@ -125,7 +104,7 @@ const features =
             </div>
 
             <div>
-              <SectionTitle>{tHome("featuredProducts.heading")}</SectionTitle>
+              <SectionTitle>محصولات منتخب</SectionTitle>
               <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
                 {products.map((product) => (
                   <Link key={product.slug} href={`/products/${product.slug}`} className="group overflow-hidden rounded-2xl border border-line-200 bg-white p-3 shadow-[0_8px_28px_rgba(10,50,32,.06)] transition hover:-translate-y-1 hover:shadow-lg">
@@ -143,9 +122,9 @@ const features =
             <div className="overflow-hidden rounded-3xl border border-line-200 bg-white shadow-sm">
               <div className="grid min-h-44 grid-cols-2 sm:grid-cols-3 lg:grid-cols-[240px_repeat(4,1fr)]">
                 <Link href="/factory" className="flex flex-col items-start justify-center bg-forest-900 p-6 text-cream-50">
-                  <span className="text-xs text-gold-500">{t("factoryKicker")}</span>
-                  <h3 className="mt-2 text-xl font-black">{t("factoryTitle")}</h3>
-                  <span className="mt-5 rounded-full border border-gold-500/50 px-4 py-2 text-xs text-gold-500">{t("viewMore")}</span>
+                  <span className="text-xs text-gold-500">نگاهی به</span>
+                  <h3 className="mt-2 text-xl font-black">محیط کارخانه</h3>
+                  <span className="mt-5 rounded-full border border-gold-500/50 px-4 py-2 text-xs text-gold-500">مشاهده بیشتر ←</span>
                 </Link>
                 {factoryImages.slice(0, 4).map((item) => (
                   <div key={item.slug} className="relative min-h-40 border-s border-white/20 bg-forest-900">
@@ -169,7 +148,7 @@ const features =
             </div>
 
             <div>
-              <SectionTitle>{tHome("knowledgeBase.heading")}</SectionTitle>
+              <SectionTitle>دانشنامه پسته</SectionTitle>
               <div className="mt-5 grid gap-4 sm:grid-cols-3">
                 {articles.map((article) => (
                   <Link key={article.slug} href={`/knowledge-base/${article.slug}`} className="group overflow-hidden rounded-2xl border border-line-200 bg-white shadow-sm">
@@ -181,8 +160,8 @@ const features =
             </div>
 
             <div className="flex flex-col items-center justify-between gap-5 rounded-3xl bg-forest-900 px-7 py-7 text-center text-cream-50 sm:flex-row sm:text-right">
-              <div><b className="text-lg">{t("salesTitle")}</b><p className="mt-1 text-xs text-cream-100/65">{t("salesBody")}</p></div>
-              <PriceInquiryButton href={whatsappHref} label={tHome("hero.ctaPriceInquiry")} pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="shrink-0" />
+              <div><b className="text-lg">برای دریافت اطلاعات بیشتر و استعلام قیمت با ما در ارتباط باشید</b><p className="mt-1 text-xs text-cream-100/65">واحد فروش آماده پاسخ‌گویی به سفارش‌های عمده و صادراتی است.</p></div>
+              <PriceInquiryButton href={whatsappHref} label="استعلام قیمت از طریق واتساپ" pendingNotice="شماره واتساپ در حال تکمیل است" variant="primary" className="shrink-0" />
             </div>
           </div>
 

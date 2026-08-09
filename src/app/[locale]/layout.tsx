@@ -57,7 +57,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir="rtl">
+    <html lang={locale} dir={locale === "fa" || locale === "ar" ? "rtl" : "ltr"}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <JsonLd data={organizationJsonLd()} />

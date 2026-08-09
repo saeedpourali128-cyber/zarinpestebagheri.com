@@ -1,0 +1,376 @@
+{
+  "common": {
+    "siteName": "زرين پسته باقري",
+    "legalName": "شركة زرين دانه ترشيز",
+    "skipToContent": "الانتقال إلى المحتوى الرئيسي",
+    "pending": "المعلومات قيد الاستكمال",
+    "sampleUntilRealDocument": "Sample until the official document is uploaded",
+    "downloadCatalog": "تحميل الكتالوج",
+    "priceInquiry": "طلب عرض سعر",
+    "learnMore": "اعرف المزيد",
+    "viewAllProducts": "عرض جميع المنتجات",
+    "viewAllArticles": "عرض جميع المقالات",
+    "relatedProducts": "منتجات ذات صلة",
+    "relatedArticles": "مقالات ذات صلة",
+    "breadcrumbHome": "الرئيسية",
+    "readArticle": "قراءة المقال",
+    "backToList": "العودة إلى القائمة",
+    "knowledgeBase": "دليل الفستق",
+    "siteMenu": "قائمة الموقع",
+    "breadcrumbLabel": "مسار التنقل",
+    "address": "العنوان",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "whatsappInquiry": "طلب عرض سعر عبر واتساب",
+    "catalogPending": "الكتالوج قيد الإعداد",
+    "contactPending": "بيانات الاتصال قيد الاستكمال",
+    "whatsappPending": "رقم واتساب قيد الاستكمال",
+    "documentsPending": "المستندات قيد الإعداد",
+    "locationLabel": "كاشمر، خراسان الرضوية، إيران"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "factory": "المصنع",
+    "machinery": "المعدات",
+    "products": "المنتجات",
+    "contact": "اتصل بنا",
+    "priceInquiry": "طلب عرض سعر",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة"
+  },
+  "languageSwitcher": {
+    "label": "اللغة",
+    "comingSoon": "قريباً"
+  },
+  "footer": {
+    "about": "زرين پسته باقري هي العلامة التجارية لشركة زرين دانه ترشيز، المتخصصة في توريد وتعبئة وتصدير الفستق وحبوب الفستق من كاشمر، إيران.",
+    "quickLinks": "روابط سريعة",
+    "productsTitle": "المنتجات",
+    "contactTitle": "معلومات الاتصال",
+    "addressLabel": "العنوان",
+    "phoneLabel": "الهاتف",
+    "whatsappLabel": "واتساب",
+    "emailLabel": "البريد الإلكتروني",
+    "rightsReserved": "جميع الحقوق محفوظة لشركة زرين دانه ترشيز.",
+    "sitemapLink": "خريطة الموقع"
+  },
+  "about": {
+    "title": "من نحن",
+    "intro": "تعمل شركة زرين دانه ترشيز تحت العلامة التجارية «زرين پسته باقري» في كاشمر بخراسان الرضوية، وتوفر خدمات توريد وتعبئة وتصدير الفستق وحبوب الفستق لتجار الجملة والمصانع والعملاء الدوليين.",
+    "activityHeading": "مجال النشاط",
+    "activityBody": "يشمل نشاطنا شراء الفستق مباشرة من مزارعي منطقة كاشمر، ثم المعالجة والفرز والتعبئة وتجهيز المنتج للبيع بالجملة والتصدير.",
+    "locationHeading": "موقع النشاط",
+    "locationBody": "كاشمر، خراسان الرضوية — إحدى المناطق المعروفة بإنتاج الفستق في إيران.",
+    "capacityHeading": "القدرة على التوريد",
+    "capacityBody": "قدرة توريد سنوية تتجاوز 2,000 طن، مناسبة للطلبات الكبيرة والمستمرة.",
+    "audienceHeading": "عملاؤنا وشركاؤنا",
+    "audienceBody": "تجار الجملة، مصانع الأغذية والمكسرات، والعملاء والشركاء التجاريون الدوليون.",
+    "valuesHeading": "أسلوب العمل",
+    "values": [
+      {
+        "title": "التعامل المباشر مع المزارعين",
+        "description": "تقليل الوسطاء عبر الشراء المباشر من منتجي منطقة كاشمر."
+      },
+      {
+        "title": "تعبئة حسب الطلب",
+        "description": "تخصيص نوع وحجم التعبئة وفق احتياجات كل عميل."
+      },
+      {
+        "title": "دعم مباشر للمبيعات",
+        "description": "تواصل مباشر مع فريق المبيعات لعروض الأسعار وتنسيق الطلبات."
+      }
+    ]
+  },
+  "products": {
+    "title": "المنتجات",
+    "description": "فستق خام وحبوب فستق ومنتجات مرتبطة، متاحة بكميات الجملة مع خيارات تعبئة مخصصة.",
+    "categories": {
+      "raw": "فستق خام",
+      "kernel": "حبوب الفستق",
+      "khalal": "شرائح الفستق",
+      "powder": "مسحوق الفستق"
+    },
+    "viewProduct": "عرض المنتج",
+    "specsHeading": "مواصفات المنتج",
+    "usagesHeading": "الاستخدامات",
+    "targetMarketsHeading": "الأسواق المستهدفة",
+    "storageHeading": "شروط التخزين",
+    "specLabels": {
+      "cultivar": "الصنف",
+      "sizeOz": "الحجم (أونصة)",
+      "opennessType": "نوع التفتح",
+      "kernelColor": "لون الحبة",
+      "kernelPercentage": "نسبة الحبة",
+      "packagingType": "نوع التعبئة",
+      "minOrder": "الحد الأدنى للطلب",
+      "storageConditions": "شروط التخزين"
+    }
+  },
+  "factoryPage": {
+    "title": "المصنع",
+    "description": "صور من بيئة تجهيز وفرز وتعبئة المنتج في كاشمر.",
+    "noteHeading": "ملاحظة",
+    "note": "سيتم استبدال الصور التجريبية بصور المصنع الفعلية عند توفرها."
+  },
+  "machineryPage": {
+    "title": "المعدات",
+    "description": "المعدات المستخدمة في التنظيف والفصل والفرز وتعبئة الفستق.",
+    "capacityLabel": "الطاقة",
+    "capacityPending": "المعلومات قيد الاستكمال"
+  },
+  "certificatesPage": {
+    "title": "الشهادات والتراخيص",
+    "description": "سيتم نشر الشهادات والتراخيص الرسمية بعد استلام النسخ النهائية.",
+    "placeholderNotice": "العناصر المعروضة حالياً نماذج إلى حين رفع الوثائق الرسمية."
+  },
+  "knowledgeBasePage": {
+    "title": "دليل الفستق",
+    "description": "مقالات عملية قصيرة حول الأصناف والمعالجة والفرز وتخزين الفستق."
+  },
+  "contactPage": {
+    "title": "اتصل بنا",
+    "description": "تواصل مع فريق المبيعات للاستفسار عن الأسعار أو حجم الطلب أو تنسيق التصدير.",
+    "salesUnitHeading": "فريق المبيعات",
+    "addressHeading": "العنوان",
+    "formNotice": "سيتم ربط نموذج الاتصال بنظام مراسلة فريق المبيعات في مرحلة لاحقة.",
+    "whatsappHeading": "واتساب",
+    "whatsappPending": "سيظهر رقم واتساب المبيعات هنا بعد استكمال البيانات."
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير متاحة.",
+    "backHome": "العودة إلى الرئيسية"
+  },
+  "home": {
+    "hero": {
+      "titleLine1": "من مزارعي خراسان",
+      "titleLine2": "إلى الأسواق العالمية",
+      "subtitle": "شركة زرين دانه ترشيز",
+      "ctaCatalog": "تحميل الكتالوج",
+      "ctaPriceInquiry": "طلب عرض سعر"
+    },
+    "intro": {
+      "heading": "Company introduction",
+      "body": "Zarrin Daneh Torshiz operates in Kashmar, a recognized pistachio-producing region in Razavi Khorasan. We source, pack and prepare pistachios and kernels for wholesalers, processors and export customers."
+    },
+    "whyUs": {
+      "heading": "Why Zarrin Pesteh Bagheri",
+      "items": []
+    },
+    "featuredProducts": {
+      "heading": "منتجات مختارة",
+      "description": "A selection of raw pistachios and kernels in different grades."
+    },
+    "supplyExport": {
+      "heading": "Supply capacity & export services",
+      "capacityLabel": "Annual supply capacity",
+      "capacityValue": "More than 2,000 tons",
+      "body": "Wholesale supply for processors and distributors, with export packing and shipping coordination.",
+      "points": [
+        "Reliable high-volume supply",
+        "Custom packing for international transport",
+        "Direct sales response to export enquiries"
+      ]
+    },
+    "factory": {
+      "heading": "المصنع",
+      "body": "A view of our preparation and packing facility in Kashmar.",
+      "cta": "View factory"
+    },
+    "machinery": {
+      "heading": "المعدات",
+      "body": "Equipment used for cleaning, grading and packing.",
+      "cta": "View machinery"
+    },
+    "certificates": {
+      "heading": "الشهادات والتراخيص",
+      "body": "Official documents will be published here after verification.",
+      "cta": "View certificates"
+    },
+    "knowledgeBase": {
+      "heading": "دليل الفستق",
+      "description": "Short articles about varieties, processing and storage.",
+      "cta": "View knowledge base"
+    },
+    "contactSales": {
+      "heading": "تواصل مع المبيعات",
+      "body": "Contact us for pricing, order volume or export coordination.",
+      "cta": "اتصل بنا"
+    }
+  },
+  "homeRedesign": {
+    "metaDescription": "توريد وتعبئة وتصدير الفستق وحبوب الفستق من كاشمر، خراسان الرضوية.",
+    "eyebrow": "من البستان إلى الأسواق العالمية",
+    "heroTitle": "توريد متخصص للفستق وحبوب الفستق",
+    "heroHighlight": "من مزارعي خراسان إلى الأسواق العالمية",
+    "heroBody": "بخبرة تزيد على ثلاثة عقود في صناعة الفستق، تقوم شركة زرين دانه ترشيز سنوياً بتوريد وتجهيز وتعبئة أكثر من 2,000 طن من الفستق وحبوب الفستق للأسواق المحلية والتصديرية.",
+    "features": [
+      [
+        "+30",
+        "أكثر من 30 عاماً",
+        "خبرة وتجربة"
+      ],
+      [
+        "✦",
+        "توريد مباشر",
+        "من مزارعي خراسان"
+      ],
+      [
+        "2,000",
+        "قدرة التوريد",
+        "طن سنوياً"
+      ],
+      [
+        "▣",
+        "تعبئة قياسية",
+        "محلية وتصديرية"
+      ],
+      [
+        "+25",
+        "أسواق التصدير",
+        "دولة حول العالم"
+      ]
+    ],
+    "sideLinks": [
+      [
+        "لماذا زرين پسته باقري",
+        "مزايا تنافسية"
+      ],
+      [
+        "المنتجات",
+        "عرض جميع المنتجات"
+      ],
+      [
+        "الشهادات والتراخيص",
+        "عرض الكل"
+      ],
+      [
+        "دليل الفستق",
+        "عرض جميع المقالات"
+      ]
+    ],
+    "factoryKicker": "نظرة على",
+    "factoryTitle": "المصنع",
+    "viewMore": "عرض المزيد ←",
+    "salesTitle": "تواصل معنا للمزيد من المعلومات وطلب عرض سعر",
+    "salesBody": "فريق المبيعات جاهز لخدمة طلبات الجملة والتصدير."
+  },
+  "factoryRedesign": {
+    "heroAlt": "مصنع زرين پسته باقري",
+    "title": "المصنع وعملية الإنتاج",
+    "body": "من استلام المنتج من البستان إلى التعبئة النهائية، نعتمد تقنيات حديثة وإجراءات مراقبة الجودة لدعم سلامة المنتج وتجانسه خلال المعالجة والفرز والتعبئة.",
+    "features": [
+      [
+        "معايير دولية",
+        "إجراءات وشهادات معتمدة"
+      ],
+      [
+        "تقنيات حديثة",
+        "معدات حديثة للمعالجة"
+      ],
+      [
+        "ممارسات صحية",
+        "ضبط البيئة وسلامة المنتج"
+      ],
+      [
+        "مراقبة جودة متعددة المراحل",
+        "متابعة من الاستلام حتى التعبئة"
+      ]
+    ],
+    "allMachinery": "عرض جميع المعدات ←",
+    "certificatesNote": "الشعارات أدناه توضح تصميم القسم، وسيتم نشر الوثائق الرسمية بعد التحقق ورفعها.",
+    "downloadDocuments": "تحميل المستندات",
+    "whyTitle": "لماذا زرين پسته باقري؟",
+    "benefits": [
+      [
+        "+30",
+        "خبرة ومصداقية",
+        "أكثر من 30 عاماً"
+      ],
+      [
+        "♙",
+        "دعم متخصص",
+        "واستشارات"
+      ],
+      [
+        "▣",
+        "تعبئة قياسية",
+        "للجملة والتصدير"
+      ],
+      [
+        "↗",
+        "تسليم في الموعد",
+        "للأسواق المستهدفة"
+      ],
+      [
+        "✓",
+        "جودة مستقرة",
+        "ومتجانسة"
+      ]
+    ],
+    "ctaTitle": "تواصل مع فريق المبيعات للزيارة أو التعاون أو الاستفسار عن الطلبات",
+    "ctaBody": "دعم طلبات الجملة المحلية والتصدير"
+  },
+  "productDetail": {
+    "exportSuffix": "للتصدير",
+    "tagline": "حبات كبيرة، مفتوحة طبيعياً، خضراء ومتجانسة",
+    "quoteAvailability": "استعلام السعر والتوفر عبر واتساب",
+    "downloadSpec": "تحميل ورقة المواصفات (PDF)",
+    "specPending": "ورقة المواصفات قيد الإعداد",
+    "technicalSpecs": "المواصفات الفنية",
+    "premiumAlt": "فستق إيراني ممتاز",
+    "shelfLife": "مدة الصلاحية",
+    "shelfLifeValue": "12 شهراً في ظروف تخزين مناسبة",
+    "usesCustomers": "الاستخدامات والعملاء المستهدفون",
+    "exportMarkets": "مناسب لأسواق التصدير",
+    "markets": [
+      "الصين",
+      "الإمارات",
+      "ألمانيا",
+      "تركيا",
+      "العراق"
+    ],
+    "relatedProducts": "منتجات ذات صلة",
+    "viewProduct": "عرض المنتج ←",
+    "benefitAlt": "فستق ممتاز للتصدير",
+    "benefits": [
+      [
+        "تصدير موثوق",
+        "تعبئة تصديرية وتنسيق المستندات"
+      ],
+      [
+        "ضمان الجودة",
+        "معالجة قياسية ومراقبة متعددة المراحل"
+      ],
+      [
+        "اختيار دقيق",
+        "حبات متجانسة بنسبة تفتح مرتفعة"
+      ]
+    ],
+    "buyingGuide": "دليل شراء {title}",
+    "buyingGuideBody": "عند الشراء بالجملة، يعد حجم الحبة ونسبة التفتح ونوع التعبئة والسوق المستهدف من أهم معايير الاختيار. يحدد فريق المبيعات مواصفات الشحنة بدقة وفق طلبكم.",
+    "readFullArticle": "قراءة المقال كاملاً ←",
+    "yes": "نعم",
+    "negotiable": "قابل للتفاوض",
+    "custom": "حسب الطلب",
+    "byOrder": "حسب الطلب",
+    "minOrder": "الحد الأدنى للطلب",
+    "exportSuitable": "مناسب للتصدير",
+    "packagingType": "نوع التعبئة",
+    "opennessType": "نوع التفتح",
+    "sizeOz": "الحجم / أونصة"
+  },
+  "accessibility": {
+    "heroSlider": "صور تعريفية لشركة زرين دانه",
+    "showImage": "عرض الصورة {number}",
+    "aboutImage": "منتجات فستق زرين دانه ترشيز",
+    "footerImage": "فستق زرين دانه ترشيز",
+    "slides": {
+      "facility": "مبنى ومنشأة زرين دانه",
+      "quality": "مراقبة جودة وفرز حبوب الفستق",
+      "orchard": "بستان الفستق وممر الأشجار"
+    },
+    "productImage": "الصورة {number} من {title}"
+  }
+}

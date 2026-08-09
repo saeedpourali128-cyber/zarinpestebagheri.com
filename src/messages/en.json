@@ -1,0 +1,376 @@
+{
+  "common": {
+    "siteName": "Zarrin Pesteh Bagheri",
+    "legalName": "Zarrin Daneh Torshiz Co.",
+    "skipToContent": "Skip to main content",
+    "pending": "Information pending",
+    "sampleUntilRealDocument": "Sample until the official document is uploaded",
+    "downloadCatalog": "Download catalog",
+    "priceInquiry": "Request a quote",
+    "learnMore": "Learn more",
+    "viewAllProducts": "View all products",
+    "viewAllArticles": "View all articles",
+    "relatedProducts": "Related products",
+    "relatedArticles": "Related articles",
+    "breadcrumbHome": "Home",
+    "readArticle": "Read article",
+    "backToList": "Back to list",
+    "knowledgeBase": "Pistachio Knowledge Base",
+    "siteMenu": "Site menu",
+    "breadcrumbLabel": "Breadcrumb",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsappInquiry": "Request a quote on WhatsApp",
+    "catalogPending": "Catalog is being prepared",
+    "contactPending": "Contact information is being completed",
+    "whatsappPending": "WhatsApp number is being completed",
+    "documentsPending": "Documents are being prepared",
+    "locationLabel": "Kashmar, Razavi Khorasan, Iran"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "factory": "Factory",
+    "machinery": "Machinery",
+    "products": "Products",
+    "contact": "Contact us",
+    "priceInquiry": "Request a quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "comingSoon": "Coming soon"
+  },
+  "footer": {
+    "about": "Zarrin Pesteh Bagheri, the trading brand of Zarrin Daneh Torshiz Co., supplies, packs and exports pistachios and pistachio kernels from Kashmar, Iran.",
+    "quickLinks": "Quick links",
+    "productsTitle": "Products",
+    "contactTitle": "Contact information",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Email",
+    "rightsReserved": "All rights reserved by Zarrin Daneh Torshiz Co.",
+    "sitemapLink": "Sitemap"
+  },
+  "about": {
+    "title": "About us",
+    "intro": "Zarrin Daneh Torshiz Co., operating under the Zarrin Pesteh Bagheri brand in Kashmar, Razavi Khorasan, supplies, packs and exports pistachios and pistachio kernels to wholesalers, processors and international buyers.",
+    "activityHeading": "What we do",
+    "activityBody": "Our core activities include direct sourcing from growers in the Kashmar region, processing, grading, packing and preparing pistachios for domestic wholesale and export.",
+    "locationHeading": "Location",
+    "locationBody": "Kashmar, Razavi Khorasan — one of Iran’s recognized pistachio-producing regions.",
+    "capacityHeading": "Supply capacity",
+    "capacityBody": "Annual supply capacity of more than 2,000 tons, suitable for recurring wholesale and industrial orders.",
+    "audienceHeading": "Who we work with",
+    "audienceBody": "Domestic wholesalers, food and nut processors, and international buyers and trading partners.",
+    "valuesHeading": "How we work",
+    "values": [
+      {
+        "title": "Direct grower relationships",
+        "description": "Reducing unnecessary intermediaries by sourcing directly from growers in the Kashmar region."
+      },
+      {
+        "title": "Custom packing",
+        "description": "Adjusting package type and size to each customer’s requirements."
+      },
+      {
+        "title": "Direct sales support",
+        "description": "Direct communication with our sales team for quotations and order coordination."
+      }
+    ]
+  },
+  "products": {
+    "title": "Products",
+    "description": "Raw pistachios, pistachio kernels and related products available in wholesale volumes with custom packing.",
+    "categories": {
+      "raw": "Raw pistachios",
+      "kernel": "Pistachio kernels",
+      "khalal": "Pistachio slivers",
+      "powder": "Pistachio powder"
+    },
+    "viewProduct": "View product",
+    "specsHeading": "Product specifications",
+    "usagesHeading": "Uses",
+    "targetMarketsHeading": "Target markets",
+    "storageHeading": "Storage conditions",
+    "specLabels": {
+      "cultivar": "Cultivar",
+      "sizeOz": "Size (oz)",
+      "opennessType": "Shell opening",
+      "kernelColor": "Kernel color",
+      "kernelPercentage": "Kernel percentage",
+      "packagingType": "Packaging type",
+      "minOrder": "Minimum order",
+      "storageConditions": "Storage conditions"
+    }
+  },
+  "factoryPage": {
+    "title": "Factory",
+    "description": "Images from our preparation, grading and packing facility in Kashmar.",
+    "noteHeading": "Note",
+    "note": "Actual factory images will replace the current sample images when available."
+  },
+  "machineryPage": {
+    "title": "Machinery",
+    "description": "Equipment used for cleaning, sorting, grading and packing pistachios.",
+    "capacityLabel": "Capacity",
+    "capacityPending": "Information pending"
+  },
+  "certificatesPage": {
+    "title": "Certificates & licenses",
+    "description": "Official certificates and operating licenses will be uploaded here after final documents are received.",
+    "placeholderNotice": "Items shown in this section are samples until official documents are uploaded."
+  },
+  "knowledgeBasePage": {
+    "title": "Pistachio Knowledge Base",
+    "description": "Short practical articles about pistachio varieties, processing, grading and storage."
+  },
+  "contactPage": {
+    "title": "Contact us",
+    "description": "Contact our sales team for pricing, order volumes or export coordination.",
+    "salesUnitHeading": "Sales team",
+    "addressHeading": "Address",
+    "formNotice": "The contact form will be connected to the sales messaging system in a later phase.",
+    "whatsappHeading": "WhatsApp",
+    "whatsappPending": "The sales WhatsApp number will appear here after the information is completed."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for is unavailable.",
+    "backHome": "Back to home"
+  },
+  "home": {
+    "hero": {
+      "titleLine1": "From Khorasan growers",
+      "titleLine2": "To global markets",
+      "subtitle": "Zarrin Daneh Torshiz Co.",
+      "ctaCatalog": "Download catalog",
+      "ctaPriceInquiry": "Request a quote"
+    },
+    "intro": {
+      "heading": "Company introduction",
+      "body": "Zarrin Daneh Torshiz operates in Kashmar, a recognized pistachio-producing region in Razavi Khorasan. We source, pack and prepare pistachios and kernels for wholesalers, processors and export customers."
+    },
+    "whyUs": {
+      "heading": "Why Zarrin Pesteh Bagheri",
+      "items": []
+    },
+    "featuredProducts": {
+      "heading": "Featured products",
+      "description": "A selection of raw pistachios and kernels in different grades."
+    },
+    "supplyExport": {
+      "heading": "Supply capacity & export services",
+      "capacityLabel": "Annual supply capacity",
+      "capacityValue": "More than 2,000 tons",
+      "body": "Wholesale supply for processors and distributors, with export packing and shipping coordination.",
+      "points": [
+        "Reliable high-volume supply",
+        "Custom packing for international transport",
+        "Direct sales response to export enquiries"
+      ]
+    },
+    "factory": {
+      "heading": "Factory",
+      "body": "A view of our preparation and packing facility in Kashmar.",
+      "cta": "View factory"
+    },
+    "machinery": {
+      "heading": "Machinery",
+      "body": "Equipment used for cleaning, grading and packing.",
+      "cta": "View machinery"
+    },
+    "certificates": {
+      "heading": "Certificates & licenses",
+      "body": "Official documents will be published here after verification.",
+      "cta": "View certificates"
+    },
+    "knowledgeBase": {
+      "heading": "Pistachio Knowledge Base",
+      "description": "Short articles about varieties, processing and storage.",
+      "cta": "View knowledge base"
+    },
+    "contactSales": {
+      "heading": "Contact sales",
+      "body": "Contact us for pricing, order volume or export coordination.",
+      "cta": "Contact us"
+    }
+  },
+  "homeRedesign": {
+    "metaDescription": "Pistachio and pistachio kernel sourcing, packing and export from Kashmar, Razavi Khorasan.",
+    "eyebrow": "From orchard to global markets",
+    "heroTitle": "Specialized pistachio and kernel supply",
+    "heroHighlight": "From Khorasan growers to global markets",
+    "heroBody": "With more than three decades of experience in the pistachio industry, Zarrin Daneh Torshiz sources, prepares and packs over 2,000 tons of pistachios and pistachio kernels annually for domestic and export markets.",
+    "features": [
+      [
+        "30+",
+        "More than 30 years",
+        "Experience and expertise"
+      ],
+      [
+        "✦",
+        "Direct sourcing",
+        "From Khorasan growers"
+      ],
+      [
+        "2,000",
+        "Annual capacity",
+        "Tons per year"
+      ],
+      [
+        "▣",
+        "Standard packing",
+        "Domestic and export"
+      ],
+      [
+        "25+",
+        "Export reach",
+        "Countries worldwide"
+      ]
+    ],
+    "sideLinks": [
+      [
+        "Why Zarrin Pesteh Bagheri",
+        "Our competitive strengths"
+      ],
+      [
+        "Products",
+        "View all products"
+      ],
+      [
+        "Certificates & licenses",
+        "View all"
+      ],
+      [
+        "Pistachio Knowledge Base",
+        "View all articles"
+      ]
+    ],
+    "factoryKicker": "A look at our",
+    "factoryTitle": "Factory",
+    "viewMore": "View more →",
+    "salesTitle": "Contact us for more information and a quotation",
+    "salesBody": "Our sales team is ready to support wholesale and export orders."
+  },
+  "factoryRedesign": {
+    "heroAlt": "Zarrin Pesteh Bagheri factory",
+    "title": "Factory & production process",
+    "body": "From orchard intake to final packing, we use modern processing methods and quality-control procedures to support product safety and consistency throughout receiving, processing, grading and packing.",
+    "features": [
+      [
+        "International standards",
+        "Recognized procedures and certifications"
+      ],
+      [
+        "Modern technology",
+        "Up-to-date processing equipment"
+      ],
+      [
+        "Hygienic practices",
+        "Environmental and product-safety controls"
+      ],
+      [
+        "Multi-stage quality control",
+        "Monitoring from intake to packing"
+      ]
+    ],
+    "allMachinery": "View all machinery →",
+    "certificatesNote": "The badges below illustrate the intended layout. Official documents will be published after verification and upload.",
+    "downloadDocuments": "Download documents",
+    "whyTitle": "Why Zarrin Pesteh Bagheri?",
+    "benefits": [
+      [
+        "30+",
+        "Experience & credibility",
+        "More than 30 years"
+      ],
+      [
+        "♙",
+        "Specialist support",
+        "And consultation"
+      ],
+      [
+        "▣",
+        "Standard packing",
+        "For export and wholesale"
+      ],
+      [
+        "↗",
+        "On-time delivery",
+        "For target markets"
+      ],
+      [
+        "✓",
+        "Consistent quality",
+        "Reliable and uniform"
+      ]
+    ],
+    "ctaTitle": "Contact our sales team for visits, cooperation or order enquiries",
+    "ctaBody": "Support for domestic wholesale and export orders"
+  },
+  "productDetail": {
+    "exportSuffix": "Export Grade",
+    "tagline": "Large, naturally open, green and uniform kernels",
+    "quoteAvailability": "Check price & availability on WhatsApp",
+    "downloadSpec": "Download specification sheet (PDF)",
+    "specPending": "Specification sheet is being prepared",
+    "technicalSpecs": "Technical specifications",
+    "premiumAlt": "Premium Iranian pistachios",
+    "shelfLife": "Shelf life",
+    "shelfLifeValue": "12 months under suitable storage conditions",
+    "usesCustomers": "Applications & target customers",
+    "exportMarkets": "Suitable for export markets",
+    "markets": [
+      "China",
+      "UAE",
+      "Germany",
+      "Türkiye",
+      "Iraq"
+    ],
+    "relatedProducts": "Related products",
+    "viewProduct": "View product →",
+    "benefitAlt": "Premium export pistachios",
+    "benefits": [
+      [
+        "Reliable export supply",
+        "Export packing and document coordination"
+      ],
+      [
+        "Quality assurance",
+        "Standard processing and multi-stage control"
+      ],
+      [
+        "Careful selection",
+        "Uniform nuts with high shell opening"
+      ]
+    ],
+    "buyingGuide": "Buying guide: {title}",
+    "buyingGuideBody": "For wholesale purchasing, nut size, shell opening, packing type and destination market are key selection criteria. Our sales team confirms exact shipment specifications according to your order.",
+    "readFullArticle": "Read full article →",
+    "yes": "Yes",
+    "negotiable": "Negotiable",
+    "custom": "Custom",
+    "byOrder": "By order",
+    "minOrder": "Minimum order",
+    "exportSuitable": "Export suitable",
+    "packagingType": "Packaging type",
+    "opennessType": "Shell opening",
+    "sizeOz": "Size / oz"
+  },
+  "accessibility": {
+    "heroSlider": "Zarrin Daneh introduction images",
+    "showImage": "Show image {number}",
+    "aboutImage": "Zarrin Daneh Torshiz pistachio products",
+    "footerImage": "Zarrin Daneh Torshiz pistachios",
+    "slides": {
+      "facility": "Zarrin Daneh facility and building",
+      "quality": "Pistachio kernel quality control and grading",
+      "orchard": "Pistachio orchard and tree rows"
+    },
+    "productImage": "Image {number} of {title}"
+  }
+}
