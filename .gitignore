@@ -30,3 +30,9 @@ next-env.d.ts
 /.wrangler/
 cloudflare-env.d.ts
 .dev.vars
+
+# Local backup files
+*.bak
+*.before-*.bak
+src-backup-before-i18n/
+page-corrupted-i18n-backup.tsx
