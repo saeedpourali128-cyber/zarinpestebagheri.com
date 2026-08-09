@@ -110,7 +110,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 {[...product.usages, ...product.targetMarkets].slice(0, 4).map((item, index) => <div key={item} className="rounded-2xl bg-cream-100 p-4 text-center"><span className="text-xl text-gold-700">{["◎", "♧", "▣", "◈"][index]}</span><p className="mt-2 text-xs font-bold leading-6 text-forest-900">{item}</p></div>)}
               </div>
               <h3 className="mt-6 text-center text-sm font-extrabold text-forest-900">{td("exportMarkets")}</h3>
-              <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs text-ink-600">{product.targetMarkets.map((market) => <span key={market} className="rounded-full border px-3 py-1.5">{market}</span>)}</div>
+          <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs text-ink-600">{product.targetMarkets.map((market) => (<span key={market} className="rounded-full border px-3 py-1.5">{market}</span>))}</div>
             </section>
 
             <section className="rounded-3xl border border-line-200 bg-white p-5 shadow-sm sm:p-6">
