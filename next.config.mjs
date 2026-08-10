@@ -5,6 +5,11 @@ const withNextIntl = createNextIntlPlugin("./src/lib/i18n/request.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "10mb",
+    },
+  },
   images: {
     // بهینه‌سازی تصاویر روی Cloudflare Workers نیاز به فعال‌سازی جداگانه‌ی
     // سرویس Cloudflare Images دارد؛ چون همه‌ی تصاویر همین پروژه از قبل WebP هستند،
